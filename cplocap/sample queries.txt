@@ -1,0 +1,33 @@
+//fetch multiple records
+$table_name = $tblpref."city";
+$column_set = "city_id";
+$condition = sprintf("city_id='%d'",$city);
+$order_by = "city_id";
+$page_res = select_multiple_records($connection,$table_name,$column_set,$condition,$order_by,__FILE__,__LINE__);
+
+//fetch single record
+$table_name = $tblpref."city";
+$feald_set = "city_id";
+$condition = sprintf("city_id='%d'",$id);
+$row1 = select_single_record($connection,$table_name,$feald_set,$condition,__FILE__,__LINE__);
+
+//count records
+$table_name = $tblpref."city";
+$condition = sprintf("city_id='%d'",$id);
+$rowCount  = count_table_record($connection,$table_name,$condition,__FILE__,__LINE__);
+
+//Add records
+$table_name = $tblpref."city";
+$feals_set = sprintf("city_name='%s'",$sname);
+$id = add_record($connection,$table_name,$feals_set,__FILE__,__LINE__);
+
+//Update records
+$table_name = $tblpref."city";
+$feals_set = sprintf("city_name='%s'",$sname);
+$condition = sprintf"city_id='%d'",city;
+update_record($connection,$table_name,$feals_set,$condition,__FILE__,__LINE__);
+
+//Delete record
+$table_name = $tblpref."city";
+$condition = sprintf"city_id='%d'",city;
+delete_record($connection,$table_name,$condition,__FILE__,__LINE__);
